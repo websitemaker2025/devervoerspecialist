@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>De Vervoerspecialist</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at top, #0f0f0f, #111);
+      color: #e0e0e0;
+      scroll-behavior: smooth;
+    }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      background: rgba(30, 30, 30, 0.8);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #2d2d2d;
+    }
+    header img {
+      height: 200px;
+      display: block;
+      margin: auto;
+      filter: drop-shadow(0 0 10px #0af);
+    }
+    .hero {
+      background: linear-gradient(145deg, #1d1d1d, #141414);
+      padding: 5rem 1rem;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3.4rem;
+      margin-bottom: 1rem;
+      color: #00baff;
+      text-shadow: 0 0 15px #0099ff;
+    }
+    .hero p {
+      font-size: 1.4rem;
+      color: #cccccc;
+    }
+
+    .section {
+      padding: 2rem 1rem;
+      max-width: 1000px;
+      margin: 2.5rem auto;
+    }
+    .section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #00baff;
+      text-align: center;
+      text-shadow: 0 0 10px #0077cc;
+    }
+
+    .section p, .section ul {
+      font-size: 1.1rem;
+      color: #cccccc;
+      text-align:center;
+    }
+
+    /* Futuristic h3 */
+    h3 {
+      font-size: 1.4rem;
+      color: #00e0ff;
+      text-shadow: 0 0 6px #00e0ff;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Card style like contact */
+    .card {
+      background: rgba(30,30,30,0.8);
+      border-radius: 12px;
+      padding: 2rem;
+      border: 1px solid #333;
+      box-shadow: 0 0 20px #0077cc55;
+      margin-top: 1.5rem;
+    }
+
+    footer {
+      background: #0e0e0e;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      color: #666;
+      border-top: 1px solid #222;
+    }
+
+    a {
+      color: #4da3ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-shadow: 0 0 6px #4da3ff;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 2.2rem; }
+      .hero p { font-size: 1.1rem; }
+      header img { height: 130px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="De Vervoerspecialist Logo" />
+    <nav></nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welkom bij De Vervoerspecialist</h1>
+    <p>Uw betrouwbare partner voor transport en logistiek.</p>
+  </section>
+
+  <section id="diensten" class="section">
+    <h2>Diensten</h2>
+
+    <div class="card">
+      <h3>💨 Spoedvervoer</h3>
+      <p>Als Tijd Echt Belangrijk Is<br><br>
+      Heb je iets dat met spoed geleverd moet worden? Dan ben je bij De Vervoerspecialist aan het juiste adres.
+      Zodra je contact met ons opneemt, vertrekt onze koerier direct richting het ophaaladres. Geen omwegen, geen vertraging – alleen een snelle en veilige levering van deur tot deur.<br><br>
+      Onze spoedservice biedt:
+        <br>Direct vervoer binnen Nederland en Europa
+        <br>Realtime updates van je zending
+        <br>Altijd bereikbaar, 24/7
+        <br>Bij De Vervoerspecialist is jouw spoed onze missie.</p>
+    </div>
+
+    <div class="card">
+      <h3>🏠 Verhuisservice</h3>
+      <p>Zorgeloos Verhuizen met Ervaring<br><br>
+      Verhuizen kan stressvol zijn, maar niet met De Vervoerspecialist.
+      Wij nemen het zware werk voor je uit handen en zorgen dat al je bezittingen veilig en efficiënt worden vervoerd – van kleine appartementen tot complete bedrijfspanden.<br><br>
+      Onze verhuisservice omvat:
+      
+    <br>Professionele inpak- en uitpakhulp
+    <br>(De)montage van meubels
+    <br>Beschermende materialen en veilige lading
+    <br>Flexibele planning, ook in het weekend
+      
+      Met De Vervoerspecialist verhuis je zonder zorgen.</p>
+    </div>
+
+    <div class="card">
+      <h3>📦 Onze Extra Diensten</h3>
+      <p>Naast koeriersritten, spoedtransport en verhuizingen bieden wij ook:
+      <ul>
+        <br>Dagelijkse routes en vaste leveringen
+        <br>Nationaal én internationaal vervoer
+        <br>Discreet documententransport
+        <br>Pallet- en volumevervoer
+        <br>
+        Wat je ook wilt laten vervoeren – De Vervoerspecialist zorgt dat het goed komt.</p>
+    </div>
+
+  </section>
+
+  <section id="over" class="section">
+    <h2>🌟 Waarom kiezen voor De Vervoerspecialist?</h2>
+
+    <div class="card">
+      <ul>
+        <br>Betrouwbare en snelle service
+        <br>Persoonlijke benadering
+        <br>Ervaren chauffeurs met oog voor detail
+        <br>Duidelijke communicatie en transparante prijzen
+        <br>24/7 beschikbaar voor spoedritten
+      
+      <p><br>Bij De Vervoerspecialist is elke zending belangrijk.
+      Of het nu groot, klein, gepland of spoed is – wij brengen het met zorg, snelheid en een glimlach.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section card">
+    <h2>Contact</h2>
+    <p>Neem contact met ons op via e-mail: <a href="mailto:Devervoerspecialist@gmail.com">Devervoerspecialist@gmail.com</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 De Vervoerspecialist. Alle rechten voorbehouden.</p>
+  </footer>
+</body>
+</html>
