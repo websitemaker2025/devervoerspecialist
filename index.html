@@ -5,112 +5,231 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>De Vervoerspecialist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at top, #0f0f0f, #111);
+      font-family: 'Roboto', sans-serif;
+      background: radial-gradient(circle at top, #0a0a0a, #111);
       color: #e0e0e0;
       scroll-behavior: smooth;
+      overflow-x: hidden;
     }
+
+    /* HEADER */
     header {
+      position: fixed;
+      width: 100%;
       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background: rgba(15,15,15,0.7);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #222;
+      z-index: 1000;
+      animation: slideDown 1s ease-out;
+    }
+
+    header img {
+      height: 70px;
+      filter: drop-shadow(0 0 15px #00baff);
+      transition: transform 0.3s ease;
+    }
+
+    header img:hover {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-weight: 500;
+      color: #00baff;
+      text-decoration: none;
+      text-shadow: 0 0 5px #00baff55;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 15px #00ffff;
+      color: #00ffff;
+      transform: scale(1.1);
+    }
+
+    @keyframes slideDown {
+      0% { transform: translateY(-100px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    /* HERO SECTION */
+    .hero {
+      display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 2rem 1rem;
-      background: rgba(30, 30, 30, 0.8);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid #2d2d2d;
-    }
-    header img {
-      height: 200px;
-      display: block;
-      margin: auto;
-      filter: drop-shadow(0 0 10px #0af);
-    }
-    .hero {
-      background: linear-gradient(145deg, #1d1d1d, #141414);
-      padding: 5rem 1rem;
       text-align: center;
+      padding: 8rem 1rem 5rem;
+      background: linear-gradient(145deg, #111, #1a1a1a);
+      overflow: hidden;
     }
+
     .hero h1 {
-      font-size: 3.4rem;
-      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
       color: #00baff;
-      text-shadow: 0 0 15px #0099ff;
-    }
-    .hero p {
-      font-size: 1.4rem;
-      color: #cccccc;
+      text-shadow: 0 0 20px #00baff, 0 0 40px #00ffff55;
+      animation: glow 2s ease-in-out infinite alternate;
     }
 
-    .section {
-      padding: 2rem 1rem;
-      max-width: 1000px;
-      margin: 2.5rem auto;
+    .hero p {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+      color: #ccc;
+      text-shadow: 0 0 5px #00baff33;
     }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 10px #00baff, 0 0 20px #00ffff55; }
+      100% { text-shadow: 0 0 20px #00baff, 0 0 40px #00ffffaa; }
+    }
+
+    /* SECTIONS */
+    .section {
+      max-width: 1000px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      position: relative;
+    }
+
     .section h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
       color: #00baff;
       text-align: center;
-      text-shadow: 0 0 10px #0077cc;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px #00baff, 0 0 20px #00ffff33;
+      position: relative;
     }
 
-    .section p, .section ul {
-      font-size: 1.1rem;
-      color: #cccccc;
-      text-align:center;
+    .section h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 3px;
+      background: #00ffff;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+      box-shadow: 0 0 10px #00ffff;
+      animation: underlineAnim 2s infinite alternate;
     }
 
-    /* Futuristic h3 */
-    h3 {
-      font-size: 1.4rem;
-      color: #00e0ff;
-      text-shadow: 0 0 6px #00e0ff;
-      font-weight: 600;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
+    @keyframes underlineAnim {
+      0% { width: 60px; opacity: 0.6; }
+      100% { width: 80px; opacity: 1; }
     }
 
-    /* Card style like contact */
+    /* CARDS */
     .card {
-      background: rgba(30,30,30,0.8);
-      border-radius: 12px;
-      padding: 2rem;
+      background: rgba(20, 20, 20, 0.9);
       border: 1px solid #333;
-      box-shadow: 0 0 20px #0077cc55;
-      margin-top: 1.5rem;
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 0 20px #00baff55, 0 0 40px #00ffff22;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(6px);
     }
 
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 30px #00ffffaa, 0 0 60px #00baff55;
+    }
+
+    .card h3 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.6rem;
+      color: #00e0ff;
+      text-shadow: 0 0 10px #00e0ff;
+      margin-bottom: 1rem;
+    }
+
+    .card p, .card ul {
+      font-size: 1.1rem;
+      color: #ccc;
+      line-height: 1.8;
+    }
+
+    .card ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .card ul li::before {
+      content: "▹";
+      color: #00baff;
+      margin-right: 0.5rem;
+    }
+
+    /* ANIMATIONS FOR CARDS */
+    .card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.3s; }
+    .card:nth-child(2) { animation-delay: 0.6s; }
+    .card:nth-child(3) { animation-delay: 0.9s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* FOOTER */
     footer {
       background: #0e0e0e;
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
       font-size: 1rem;
       color: #666;
       border-top: 1px solid #222;
+      box-shadow: inset 0 10px 20px #0005;
     }
 
     a {
       color: #4da3ff;
       text-decoration: none;
-    }
-    a:hover {
-      text-shadow: 0 0 6px #4da3ff;
+      transition: all 0.3s ease;
     }
 
-    @media (max-width: 600px) {
+    a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 10px #00ffff;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 3rem; }
+      .hero p { font-size: 1.2rem; }
+      header { padding: 1rem 2rem; }
+      nav a { margin-left: 1rem; }
+    }
+
+    @media (max-width: 480px) {
       .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: 1.1rem; }
-      header img { height: 130px; }
+      .hero p { font-size: 1rem; }
+      header img { height: 60px; }
     }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="De Vervoerspecialist Logo" />
-    <nav></nav>
+    <nav>
+      <a href="#diensten">Diensten</a>
+      <a href="#over">Over Ons</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
   <section class="hero">
@@ -127,10 +246,12 @@
       Heb je iets dat met spoed geleverd moet worden? Dan ben je bij De Vervoerspecialist aan het juiste adres.
       Zodra je contact met ons opneemt, vertrekt onze koerier direct richting het ophaaladres. Geen omwegen, geen vertraging – alleen een snelle en veilige levering van deur tot deur.<br><br>
       Onze spoedservice biedt:
-        <br>Direct vervoer binnen Nederland en Europa
-        <br>Realtime updates van je zending
-        <br>Altijd bereikbaar, 24/7
-        <br>Bij De Vervoerspecialist is jouw spoed onze missie.</p>
+        <ul>
+          <li>Direct vervoer binnen Nederland en Europa</li>
+          <li>Realtime updates van je zending</li>
+          <li>Altijd bereikbaar, 24/7</li>
+        </ul>
+      Bij De Vervoerspecialist is jouw spoed onze missie.</p>
     </div>
 
     <div class="card">
@@ -139,49 +260,46 @@
       Verhuizen kan stressvol zijn, maar niet met De Vervoerspecialist.
       Wij nemen het zware werk voor je uit handen en zorgen dat al je bezittingen veilig en efficiënt worden vervoerd – van kleine appartementen tot complete bedrijfspanden.<br><br>
       Onze verhuisservice omvat:
-      
-    <br>Professionele inpak- en uitpakhulp
-    <br>(De)montage van meubels
-    <br>Beschermende materialen en veilige lading
-    <br>Flexibele planning, ook in het weekend
-      
+        <ul>
+          <li>Professionele inpak- en uitpakhulp</li>
+          <li>(De)montage van meubels</li>
+          <li>Beschermende materialen en veilige lading</li>
+          <li>Flexibele planning, ook in het weekend</li>
+        </ul>
       Met De Vervoerspecialist verhuis je zonder zorgen.</p>
     </div>
 
     <div class="card">
       <h3>📦 Onze Extra Diensten</h3>
       <p>Naast koeriersritten, spoedtransport en verhuizingen bieden wij ook:
-      <ul>
-        <br>Dagelijkse routes en vaste leveringen
-        <br>Nationaal én internationaal vervoer
-        <br>Discreet documententransport
-        <br>Pallet- en volumevervoer
-        <br>
-        Wat je ook wilt laten vervoeren – De Vervoerspecialist zorgt dat het goed komt.</p>
+        <ul>
+          <li>Dagelijkse routes en vaste leveringen</li>
+          <li>Nationaal én internationaal vervoer</li>
+          <li>Discreet documententransport</li>
+          <li>Pallet- en volumevervoer</li>
+        </ul>
+      Wat je ook wilt laten vervoeren – De Vervoerspecialist zorgt dat het goed komt.</p>
     </div>
-
   </section>
 
   <section id="over" class="section">
     <h2>🌟 Waarom kiezen voor De Vervoerspecialist?</h2>
-
     <div class="card">
       <ul>
-        <br>Betrouwbare en snelle service
-        <br>Persoonlijke benadering
-        <br>Ervaren chauffeurs met oog voor detail
-        <br>Duidelijke communicatie en transparante prijzen
-        <br>24/7 beschikbaar voor spoedritten
-      
-      <p><br>Bij De Vervoerspecialist is elke zending belangrijk.
-      Of het nu groot, klein, gepland of spoed is – wij brengen het met zorg, snelheid en een glimlach.</p>
+        <li>Betrouwbare en snelle service</li>
+        <li>Persoonlijke benadering</li>
+        <li>Ervaren chauffeurs met oog voor detail</li>
+        <li>Duidelijke communicatie en transparante prijzen</li>
+        <li>24/7 beschikbaar voor spoedritten</li>
+      </ul>
+      <p>Bij De Vervoerspecialist is elke zending belangrijk. Of het nu groot, klein, gepland of spoed is – wij brengen het met zorg, snelheid en een glimlach.</p>
     </div>
   </section>
 
-  <section id="contact" class="section card">
+  <center><section id="contact" class="section card">
     <h2>Contact</h2>
     <p>Neem contact met ons op via e-mail: <a href="mailto:Devervoerspecialist@gmail.com">Devervoerspecialist@gmail.com</a></p>
-  </section>
+  </section></center>
 
   <footer>
     <p>&copy; 2025 De Vervoerspecialist. Alle rechten voorbehouden.</p>
