@@ -167,6 +167,43 @@
       margin-right: 0.5rem;
     }
 
+    /* FOTO SECTIE */
+    .foto-galerij {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 4rem auto;
+      max-width: 1100px;
+      padding: 0 1rem;
+    }
+
+    .foto-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      border: 1px solid #222;
+      box-shadow: 0 0 25px #00baff33, 0 0 60px #00ffff22;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .foto-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 35px #00ffffaa, 0 0 80px #00baff55;
+    }
+
+    .foto-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      filter: brightness(0.9) saturate(1.1);
+      transition: filter 0.4s ease;
+    }
+
+    .foto-item:hover img {
+      filter: brightness(1.1) saturate(1.4);
+    }
+
+    
     /* ANIMATIONS FOR CARDS */
     .card {
       opacity: 0;
@@ -233,7 +270,19 @@
     <h1>Welkom bij De Vervoerspecialist</h1>
     <p>Uw betrouwbare partner voor transport en logistiek.</p>
   </section>
+  <section class="section">
+  <h2>📸 Afbeeldingen</h2>
 
+  <div class="foto-galerij">
+    <div class="foto-item">
+      <img src="foto1.jpeg" alt="Transport foto 1">
+    </div>
+
+    <div class="foto-item">
+      <img src="foto2.jpeg" alt="Transport foto 2">
+    </div>
+  </div>
+</section>
   <section id="diensten" class="section">
     <h2>Diensten</h2>
 
@@ -292,14 +341,22 @@
       <p>Bij De Vervoerspecialist is elke zending belangrijk. Of het nu groot, klein, gepland of spoed is – wij brengen het met zorg, snelheid en een glimlach.</p>
     </div>
   </section>
-
+  <!-- TrustBox widget - Review Collector -->
+  <div class="trustpilot-widget" data-locale="nl-NL" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="691c67eda516330d70842774" data-style-height="52px" data-style-width="100%" data-token="be6dbccc-7c7c-4b4d-bb87-e63e019d9d1c">
+    <a href="https://nl.trustpilot.com/review/de-vervoerspecialist.nl" target="_blank" rel="noopener">Trustpilot</a>
+  </div>
+  <!-- End TrustBox widget -->
   <center><section id="contact" class="section card">
     <h2>Contact</h2>
     <p>Neem contact met ons op via e-mail: <a href="mailto:Devervoerspecialist@gmail.com">Devervoerspecialist@gmail.com</a></p>
+    <p>Of bel ons via dit nummer: <a href="tel:+31634628889">+31 0634628889</a></p>
   </section></center>
 
   <footer>
     <p>&copy; 2025 De Vervoerspecialist. Alle rechten voorbehouden.</p>
   </footer>
+  <!-- TrustBox script -->
+  <script type="text/javascript" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+  <!-- End TrustBox script -->
 </body>
 </html>
